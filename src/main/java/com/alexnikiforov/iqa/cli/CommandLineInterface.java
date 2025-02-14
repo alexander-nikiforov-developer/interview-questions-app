@@ -2,10 +2,12 @@ package com.alexnikiforov.iqa.cli;
 
 import com.alexnikiforov.iqa.controller.InterviewQuestionController;
 import com.alexnikiforov.iqa.dto.InterviewQuestionDto;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Scanner;
 
+@Component
 public class CommandLineInterface {
     public static final String ADD_INTERVIEW_QUESTION_MENU_TEXT = """
                 === Добавление интервью вопроса ===

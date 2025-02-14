@@ -2,11 +2,13 @@ package com.alexnikiforov.iqa.dao.inmemory;
 
 import com.alexnikiforov.iqa.dao.InterviewQuestionStorage;
 import com.alexnikiforov.iqa.model.InterviewQuestion;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Component
 public class InMemoryInterviewQuestionStorage implements InterviewQuestionStorage {
 
     private final AtomicLong lastIdentifier;

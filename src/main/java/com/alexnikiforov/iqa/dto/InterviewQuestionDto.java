@@ -1,5 +1,8 @@
 package com.alexnikiforov.iqa.dto;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class InterviewQuestionDto {
         Long id;
         String question;

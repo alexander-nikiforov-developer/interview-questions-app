@@ -4,9 +4,11 @@ import com.alexnikiforov.iqa.dao.InterviewQuestionStorage;
 import com.alexnikiforov.iqa.dto.InterviewQuestionDto;
 import com.alexnikiforov.iqa.model.InterviewQuestion;
 import com.alexnikiforov.iqa.service.mappers.InterviewQuestionMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class InterviewQuestionService {
 
     private final InterviewQuestionMapper interviewQuestionMapper;
