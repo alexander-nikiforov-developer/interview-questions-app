@@ -1,46 +1,25 @@
 package com.alexnikiforov.iqa.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Generated;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@AllArgsConstructor
+@Getter
+@Setter
 public class InterviewQuestion {
     private Long id;
     private String question;
     private String answer;
 
-    public InterviewQuestion(Long id, String question, String answer) {
-        this.id = id;
-        this.question = question;
-        this.answer = answer;
-    }
-
     public InterviewQuestion(String question, String answer) {
         this(null, question, answer);
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
+    //todo change once we add hibernate support
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -49,6 +28,7 @@ public class InterviewQuestion {
         return Objects.equals(id, that.id) && Objects.equals(question, that.question) && Objects.equals(answer, that.answer);
     }
 
+    //todo change once we add hibernate support
     @Override
     public int hashCode() {
         return Objects.hash(id, question, answer);
