@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InterviewQuestionsApp implements CommandLineRunner {
+public class InterviewQuestionsApp {
 
     private final CommandLineInterface commandLineInterface;
 
@@ -18,8 +18,4 @@ public class InterviewQuestionsApp implements CommandLineRunner {
 		SpringApplication.run(InterviewQuestionsApp.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        commandLineInterface.run();
-    }
 }

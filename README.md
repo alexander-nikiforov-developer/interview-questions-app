@@ -4,7 +4,8 @@
 Spring начинающими разработчиками
 
 ### Идеи обновлений
-* IQA-01 добавить CRUD операции для InterviewQuestion
+* IQA-01-1 добавить CRUD операции для InterviewQuestion - get all, get by id
+* IQA-01-2 добавить CRUD операции для InterviewQuestion - add new
 * IQA-02 доработать модель InterviewQuestion - добавить
   категории/скиллы
 * IQA-03 интеграция с фронтендом
