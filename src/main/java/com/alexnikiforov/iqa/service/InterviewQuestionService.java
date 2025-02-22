@@ -4,6 +4,7 @@ import com.alexnikiforov.iqa.dao.InterviewQuestionStorage;
 import com.alexnikiforov.iqa.dto.InterviewQuestionDto;
 import com.alexnikiforov.iqa.model.InterviewQuestion;
 import com.alexnikiforov.iqa.service.mappers.InterviewQuestionMapper;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +17,9 @@ public class InterviewQuestionService {
     private final InterviewQuestionMapper interviewQuestionMapper;
     private final InterviewQuestionStorage storage;
 
-    public InterviewQuestion create(InterviewQuestionDto questionDto) {
+    public Long create(@Valid InterviewQuestionDto questionDto) {
         InterviewQuestion interviewQuestion = interviewQuestionMapper.toInterviewQuestion(questionDto);
-        return storage.createInterviewQuestion(interviewQuestion);
+        return storage.createInterviewQuestion(interviewQuestion).getId();
     }
 
     public List<InterviewQuestionDto> getAll() {
