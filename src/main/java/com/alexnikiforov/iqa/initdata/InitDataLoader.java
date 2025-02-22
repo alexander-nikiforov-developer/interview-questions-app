@@ -1,7 +1,7 @@
 package com.alexnikiforov.iqa.initdata;
 
-import com.alexnikiforov.iqa.controller.InterviewQuestionController;
 import com.alexnikiforov.iqa.dto.InterviewQuestionDto;
+import com.alexnikiforov.iqa.service.InterviewQuestionService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class InitDataLoader {
 
-    private final InterviewQuestionController interviewQuestionController;
+    private final InterviewQuestionService interviewQuestionService;
 
     @PostConstruct
     private void init() {
@@ -18,9 +18,9 @@ public class InitDataLoader {
     }
 
     private void loadTestData() {
-        interviewQuestionController.createInterviewQuestion(new InterviewQuestionDto("Question text 1",
+        interviewQuestionService.create(new InterviewQuestionDto("Question text 1",
                 "Answer text 1"));
-        interviewQuestionController.createInterviewQuestion(new InterviewQuestionDto("Question text 2",
+        interviewQuestionService.create(new InterviewQuestionDto("Question text 2",
                 "Answer text 2"));
         System.out.println("INFO: Test questions are loaded" + System.lineSeparator());
     }
