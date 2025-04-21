@@ -33,6 +33,12 @@ public class InMemoryInterviewQuestionStorage implements InterviewQuestionStorag
         return new ArrayList<>(storage.values());
     }
 
+    @Override
+    public boolean delete(long id) {
+        InterviewQuestion removed = storage.remove(id);
+        return removed != null;
+    }
+
     private Long generateId() {
         return lastIdentifier.addAndGet(1L);
     }

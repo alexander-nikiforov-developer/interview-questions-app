@@ -13,6 +13,7 @@ public class InterviewQuestionMapper {
 
     public InterviewQuestionDto toInterviewQuestionDto(InterviewQuestion interviewQuestion) {
         return new InterviewQuestionDto(
+                interviewQuestion.getId(),
                 interviewQuestion.getQuestion(),
                 interviewQuestion.getAnswer()
         );

@@ -9,4 +9,6 @@ public interface InterviewQuestionStorage {
     InterviewQuestion createInterviewQuestion(InterviewQuestion question);
 
     List<InterviewQuestion> getAll();
+
+    boolean delete(long id);
 }

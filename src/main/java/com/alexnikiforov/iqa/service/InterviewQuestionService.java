@@ -17,7 +17,7 @@ public class InterviewQuestionService {
     private final InterviewQuestionMapper interviewQuestionMapper;
     private final InterviewQuestionStorage storage;
 
-    public Long create(@Valid InterviewQuestionDto questionDto) {
+    public Long create(InterviewQuestionDto questionDto) {
         InterviewQuestion interviewQuestion = interviewQuestionMapper.toInterviewQuestion(questionDto);
         return storage.createInterviewQuestion(interviewQuestion).getId();
     }
@@ -27,5 +27,9 @@ public class InterviewQuestionService {
         return questions.stream()
                 .map(interviewQuestionMapper::toInterviewQuestionDto)
                 .toList();
+    }
+
+    public boolean delete(long id) {
+        return storage.delete(id);
     }
 }

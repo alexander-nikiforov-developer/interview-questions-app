@@ -20,19 +20,25 @@ import java.util.Map;
 @RequestMapping("/api/v1/questions")
 public class InterviewQuestionController {
 
-    private final InterviewQuestionService service;
+    private final InterviewQuestionService interviewQuestionService;
 
     @GetMapping
     public ResponseEntity<List<InterviewQuestionDto>> getAllInterviewQuestions() {
-        List<InterviewQuestionDto> allQuestions = service.getAll();
+        List<InterviewQuestionDto> allQuestions = interviewQuestionService.getAll();
         return allQuestions.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(allQuestions);
     }
 
     @PostMapping
     public ResponseEntity<Void> addInterviewQuestion(@RequestBody @Valid InterviewQuestionDto interviewQuestionDto) {
-        Long id = service.create(interviewQuestionDto);
+        Long id = interviewQuestionService.create(interviewQuestionDto);
         URI location = URI.create("/api/v1/questions/" + id);
         return ResponseEntity.created(location).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteInterviewQuestion(@PathVariable long id) {
+        boolean deleted = interviewQuestionService.delete(id);
+        return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

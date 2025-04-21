@@ -12,6 +12,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class InterviewQuestionDto {
 
+    public InterviewQuestionDto(String question, String answer) {
+        this.id = null;
+        this.question = question;
+        this.answer = answer;
+    }
+
+    Long id;
+
     @NotBlank(message = "Question cannot be empty")
     String question;
     @NotBlank(message = "Answer cannot be empty")
