@@ -32,4 +32,10 @@ public class InterviewQuestionService {
     public boolean delete(long id) {
         return storage.delete(id);
     }
+
+    public boolean updateAndReturn(long id, InterviewQuestionDto interviewQuestionDto) {
+        interviewQuestionDto.setId(id);
+        InterviewQuestion interviewQuestion = interviewQuestionMapper.toInterviewQuestion(interviewQuestionDto);
+        return storage.update(interviewQuestion);
+    }
 }

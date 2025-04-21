@@ -41,6 +41,14 @@ public class InterviewQuestionController {
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<InterviewQuestionDto> updateInterviewQuestion(
+            @PathVariable long id,
+            @RequestBody @Valid InterviewQuestionDto interviewQuestionDto) {
+        boolean updated = interviewQuestionService.updateAndReturn(id, interviewQuestionDto);
+        return updated ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    }
+
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {

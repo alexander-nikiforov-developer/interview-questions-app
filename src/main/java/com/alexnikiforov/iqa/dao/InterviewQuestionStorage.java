@@ -11,4 +11,6 @@ public interface InterviewQuestionStorage {
     List<InterviewQuestion> getAll();
 
     boolean delete(long id);
+
+    boolean update(InterviewQuestion interviewQuestion);
 }

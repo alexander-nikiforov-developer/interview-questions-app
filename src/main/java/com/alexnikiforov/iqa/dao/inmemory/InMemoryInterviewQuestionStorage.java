@@ -39,6 +39,12 @@ public class InMemoryInterviewQuestionStorage implements InterviewQuestionStorag
         return removed != null;
     }
 
+    @Override
+    public boolean update(InterviewQuestion question) {
+        InterviewQuestion updated = storage.put(question.getId(), question);
+        return updated != null;
+    }
+
     private Long generateId() {
         return lastIdentifier.addAndGet(1L);
     }

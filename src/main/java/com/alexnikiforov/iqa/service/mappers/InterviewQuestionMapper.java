@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 public class InterviewQuestionMapper {
 
     public InterviewQuestion toInterviewQuestion(InterviewQuestionDto interviewQuestionDto) {
-        return new InterviewQuestion(interviewQuestionDto.getQuestion(), interviewQuestionDto.getAnswer());
+        return new InterviewQuestion(
+                interviewQuestionDto.getId(),
+                interviewQuestionDto.getQuestion(),
+                interviewQuestionDto.getAnswer());
     }
 
     public InterviewQuestionDto toInterviewQuestionDto(InterviewQuestion interviewQuestion) {
